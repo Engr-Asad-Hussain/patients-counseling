@@ -1,0 +1,39 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0-debian
+    container_name: mysql
+    networks:
+      - comm_network
+    environment:
+      - MYSQL_DATABASE=patient-system
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ROOT_HOST=%
+    ports:
+      - 3306:3306
+
+  patients:
+    image: patients
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: patients
+    depends_on:
+      - mysql
+    networks:
+      - comm_network
+    environment:
+      - MYSQL_DATABASE=patient-system
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - SECRET_KEY=django-insecure-^(e^45o%hyibp#ut@7sy^e6(6j8sj844d*l9w7dcm-5=+zet=h
+    ports:
+      - 8000:8000
+
+networks:
+  comm_network:
+    name: patients_database
