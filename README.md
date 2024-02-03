@@ -20,12 +20,17 @@ Follow the steps below to start the containerized application:
     cd patients-counseling
     ```
 
-3. Build and start docker-compose file
+3. Build the docker images:
+    ```console
+    docker-compose -f "./docker-compose.yaml" build
+    ```
+
+4. Build and start docker-compose file
     ```console
     docker-compose -f "./docker-compose.yaml" up -d
     ```
 
-4. Check the logs of docker-compose
+5. Check the logs of docker-compose
     ```console
     docker-compose logs -f patients
     ```
@@ -38,12 +43,12 @@ Follow the steps below to start the containerized application:
     patients  | Waiting for MySQL server to start...
     ```
 
-5. When the MySQL server started. Press `ctrl + C`, then run the following command
+6. When the MySQL server started. Press `ctrl + C`, then run the following command
     ```console
     docker-compose run --rm patients python manage.py migrate
     ```
 
-6. Start making request in the Postman Collection. Follow the [docs](https://github.com/Engr-Asad-Hussain/patients-counseling/tree/main/docs) to get started with Postman Collection and documentation of endpoints.
+7. Start making request in the Postman Collection. Follow the [docs](https://github.com/Engr-Asad-Hussain/patients-counseling/tree/main/docs) to get started with Postman Collection and documentation of endpoints.
 
 
 ## Local Setup
