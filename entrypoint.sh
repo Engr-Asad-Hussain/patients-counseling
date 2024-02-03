@@ -8,5 +8,9 @@ done
 
 echo "MySQL is up and running. Starting Django application."
 
+# Setup Database
+python manage.py makemigrations patients
+python manage.py migrate
+
 # Run the Django application
 python manage.py runserver 0.0.0.0:8000
