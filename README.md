@@ -78,7 +78,7 @@ Follow the steps below to start the application in development environment:
     pip install -r requirements.txt
     ```
 
-6. Setup `.env` file. Create a `.env` file (`mkdir .env`) and placed all the environmental variables:
+6. Setup `.env` file. Create a `.env` file and placed all the environmental variables:
     ```console
     DEBUG=True
     SECRET_KEY="django-insecure-^(e^45o%hyibp#ut@7sy^e6(6j8sj844d*l9w7dcm-5=+zet=h"
@@ -99,7 +99,7 @@ Follow the steps below to start the application in development environment:
         }
     }
     ```
-    Note: If you want to use external database then provide the environmental variables in `.env` file. In this scenaro you don't need to change `settings.json` file:
+    **Note**: If you want to use external database then provide the environmental variables in `.env` file. In this scenaro you don't need to change `settings.json` file:
     ```console
     # Database Configurations
     MYSQL_DATABASE="patient-system"
