@@ -65,7 +65,7 @@ Follow the steps below to start the application in development environment:
 
 3. Create a virtual environment
     ```console
-    python -m virtualenv venv
+    py -m virtualenv venv
     ```
 
 4. Activate the virtual environment - May vary depending on the OS.
@@ -99,15 +99,29 @@ Follow the steps below to start the application in development environment:
         }
     }
     ```
+    Note: If you want to use external database then provide the environmental variables in `.env` file. In this scenaro you don't need to change `settings.json` file:
+    ```console
+    # Database Configurations
+    MYSQL_DATABASE="patient-system"
+    MYSQL_USER="root"
+    MYSQL_PASSWORD="root"
+    MYSQL_HOST="localhost"
+    MYSQL_PORT=3306
+    ```
 
-8. Make the migrations in the `sqlite`:
+8. Make the migrations for the schema:
+    ```console
+    py .\manage.py makemigrations patients
+    ```
+
+9. Migrate in the `sqlite`:
     ```console
     py ./manage.py migrate
     ```
 
-9. Start the development server:
+10. Start the development server:
     ```console
     py ./manage.py runserver
     ```
 
-10. Start making request in the Postman Collection. Follow the [docs](https://github.com/Engr-Asad-Hussain/patients-counseling/tree/main/docs) to get started with Postman Collection and documentation of endpoints.
+11. Start making request in the Postman Collection. Follow the [docs](https://github.com/Engr-Asad-Hussain/patients-counseling/tree/main/docs) to get started with Postman Collection and documentation of endpoints.
