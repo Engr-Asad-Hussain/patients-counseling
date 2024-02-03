@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "f89ffb52-ee35-4b5f-96bc-aca916205a14",
+		"name": "Patients-System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13983217"
+	},
+	"item": [
+		{
+			"name": "Counsellors",
+			"item": [
+				{
+					"name": "All Counsellors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/counsellors/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"counsellors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Counsellor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Asad Hussain\",\r\n    \"email\": \"asad.h1999@yahoo.com\",\r\n    \"password\": \"password123@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/counsellors/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"counsellors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Counsellor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/counsellors/1/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"counsellors",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Counsellor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Asad Hussain _\",\r\n    \"password\": \"password123@\",\r\n    \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/counsellors/2/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"counsellors",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Counsellor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/counsellors/2/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"counsellors",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "All Appointments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/appointments/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"appointments",
+								""
+							],
+							"query": [
+								{
+									"key": "patient_id",
+									"value": "11",
+									"description": "List all appointments for this patient",
+									"disabled": true
+								},
+								{
+									"key": "counsellor_id",
+									"value": "1",
+									"description": "List all appointments for this counsellor",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "-appointment_date",
+									"description": "Sort the appointments with respect to date",
+									"disabled": true
+								},
+								{
+									"key": "start_date",
+									"value": "2024-04-10T10:00:00",
+									"description": "List appointments greater than start date",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2024-04-10T10:00:00",
+									"description": "List appointments less than end date",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Appointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patient\": 11,\r\n    \"counsellor\": 1,\r\n    \"appointment_date\": \"2024-04-10T10:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/appointments/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"appointments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Appointment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/appointments/16/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"appointments",
+								"16",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Appointment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/appointments/15/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"appointments",
+								"15",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "All Patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/patients/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Asad Hussain\",\r\n    \"email\": \"asad.h201@yahoo.com\",\r\n    \"password\": \"password123@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/patients/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Patient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/patients/12/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								"12",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Patient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/patients/4/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Patient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Asad Hussain _\",\r\n    \"email\": \"asad.h201_1@yahoo.com\",\r\n    \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/patients/12/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								"12",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}

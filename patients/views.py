@@ -70,7 +70,7 @@ def specific_patient(request: Request, uid: int):
 class CounsellorApi(APIView):
     def get(self, request: Request) -> Response:
         # Collect all counsellors from models
-        counsellors = Counsellor.objects.all()
+        counsellors = Counsellor.objects.filter(is_active=True)
 
         # Serialize Counsellors
         serializer = CounsellorSerializer(counsellors, many=True)
