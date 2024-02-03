@@ -43,7 +43,7 @@ Follow the steps below to start the containerized application:
     docker-compose run --rm patients python manage.py migrate
     ```
 
-6. Start making request in the Postman Collection. Follow the [docs]() to get started with Postman Collection and documentation of endpoints.
+6. Start making request in the Postman Collection. Follow the [docs](https://github.com/Engr-Asad-Hussain/patients-counseling/tree/main/docs) to get started with Postman Collection and documentation of endpoints.
 
 
 ## Local Setup
@@ -105,4 +105,4 @@ Follow the steps below to start the application in development environment:
     py ./manage.py runserver
     ```
 
-10. Start making request in the Postman Collection. Follow the [docs]() to get started with Postman Collection and documentation of endpoints.
+10. Start making request in the Postman Collection. Follow the [docs](https://github.com/Engr-Asad-Hussain/patients-counseling/tree/main/docs) to get started with Postman Collection and documentation of endpoints.
